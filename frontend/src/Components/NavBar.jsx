@@ -1,21 +1,32 @@
-import React from 'react'
-import "../Style/Navbar.css"
+import React from 'react';
+import "../Style/Navbar.css";
+
 const NavBar = () => {
   return (
-    <>
     <div className="navbar">
-        <div className="leftSide">
-            <h1>NexPlay</h1>
-        </div>
-        <div className="rightSide">
-            <h1>Home</h1>
-            <h1>About</h1>
-            <h1>Contact</h1>
-            <h1>Login</h1>
-        </div>
+      <div className="leftSide">
+        <h1 className="logo">NexPlay</h1>
+      </div>
+      
+      <div className="searchBar">
+        <input 
+          type="text" 
+          className="searchInput" 
+          placeholder="Search"
+        />
+        <button className="searchButton">
+          Search
+        </button>
+      </div>
+
+      <div className="rightSide">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#login" className="loginButton">Login</a>
+      </div>
     </div>
-    </>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;

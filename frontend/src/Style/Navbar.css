@@ -1,30 +1,113 @@
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: #d55a5a;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0 16px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     position: fixed;
-    top: 1.5rem;
-    left: 0.5rem;
-    right: 0.5rem;
-    border-radius: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    z-index: 100;
 }
 
-.leftSide{
+.leftSide {
     display: flex;
     align-items: center;
-    font-size: 12px;
-    font-weight:800;
-    margin-left:0.7rem;
+    gap: 16px;
+    cursor: pointer;
 }
 
-.rightSide{
+.logo{
+    font-size: 1.4rem;
+    font-weight:900;
+    color: #135b6e;
+    margin: 0;
+}
+
+.searchBar {
+    flex: 1;
+    max-width: 640px;
     display: flex;
     align-items: center;
-    gap: 20px;
-    font-size: 12px;
-    font-weight:800;
-    margin-right: 0.7rem;
-}   
+    margin: 0 auto;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+}
+
+.searchInput:focus {
+    border-color: #1a73e8;
+}
+
+.searchButton {
+    padding: 8px 24px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.searchButton:hover {
+    background-color: #f0f0f0;
+}
+
+.rightSide {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.rightSide a {
+    text-decoration: none;
+    color: #282828;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.rightSide a:hover {
+    color: #1a73e8;
+}
+
+.rightSide h1 {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.loginButton {
+    padding: 8px 16px;
+    background-color: #1a73e8;
+    color: white !important;
+    border-radius: 18px;
+    transition: background-color 0.2s !important;
+}
+
+.loginButton:hover {
+    background-color: #1557b0;
+    color: white !important;
+}
+
+@media (max-width: 768px) {
+    .searchBar {
+        display: none;
+    }
+    
+    .rightSide {
+        gap: 16px;
+    }
+    
+    .rightSide a {
+        font-size: 0.9rem;
+    }
+}
