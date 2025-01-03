@@ -1,8 +1,80 @@
-## NexPlay - Project Structure
+# NexPlay - Video Streaming Platform
 
-This document outlines the file structure for the NexPlay application, separated into frontend and backend components.
+NexPlay is a modern video streaming platform built with React and Node.js, offering a YouTube-like experience with custom features and a sleek user interface.
 
-**Frontend (`/frontend`)**
+## Features
+
+- 🎥 Video streaming with adaptive quality
+- 🔍 Advanced search functionality
+- 👤 User authentication and profiles
+- 📱 Responsive design for all devices
+- 🎨 Modern, YouTube-inspired UI/UX
+- 💾 Video upload and management
+- 💬 Comments and interactions
+
+## Tech Stack
+
+### Frontend
+- React.js
+- CSS3 with modern features
+- Redux for state management
+- Axios for API requests
+- React Router for navigation
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- JWT for authentication
+- Multer for file uploads
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+- MongoDB
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/NexPlay.git
+cd NexPlay
+```
+
+2. **Frontend Setup**
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+3. **Backend Setup**
+```bash
+cd backend
+npm install
+npm start
+```
+
+4. **Environment Variables**
+Create `.env` files in both frontend and backend directories:
+
+Frontend `.env`:
+```env
+VITE_API_URL=http://localhost:5000
+```
+
+Backend `.env`:
+```env
+PORT=5000
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+```
+
+## Project Structure
+
+### Frontend (`/frontend`)
 
 ```
 /frontend
@@ -12,57 +84,70 @@ This document outlines the file structure for the NexPlay application, separated
 ├── /src
 │ ├── /components      # Reusable UI components
 │ │ ├── NavBar.jsx
-│ │ ├── VideoPlayer.js
-│ │ └── SearchBar.js
+│ │ ├── VideoCard.jsx
+│ │ ├── VideoPlayer.jsx
+│ │ └── SearchBar.jsx
 │ ├── /pages           # Page-specific components
 │ │ ├── Home.jsx
-│ │ └── Video.jsx
+│ │ ├── Video.jsx
 │ │ ├── Login.jsx
 │ │ └── Profile.jsx
-│ ├── /styles
-│ │ ├──Home.css
-│ │ └── Video.css
-
+│ ├── /styles          # Component styles
+│ │ ├── Navbar.css
+│ │ ├── VideoCard.css
+│ │ └── global.css
 │ ├── /services        # API interaction logic
-│ │ ├── api.js         # General API calls
-│ │ └── auth.js        # Authentication API calls
-│ ├── /redux           # State management (optional)
-│ │ ├── store.js       # Redux store configuration
-│ │ └── userSlice.js   # Example Redux slice for user data
-│ ├── App.js           # Main application component
-│ ├── index.js         # Application entry point
-│ └── /styles          # Stylesheets (CSS, SCSS, etc.)
-│     └── App.css
-├── package.json       # Project dependencies and scripts
-└── .env              # Environment variables (API URLs, etc.)
+│ │ ├── api.js
+│ │ └── auth.js
+│ ├── /redux           # State management
+│ │ ├── store.js
+│ │ └── slices/
+│ ├── App.jsx          # Main application component
+│ └── main.jsx         # Application entry point
+└── package.json       # Project dependencies and scripts
 ```
 
-**Backend (`/backend`)**
+### Backend (`/backend`)
 
 ```
 /backend
 ├── /config
-│ └── db.js            # Database connection configuration
+│ └── db.js            # Database configuration
 ├── /controllers
-│ ├── authController.js # Authentication logic
-│ ├── videoController.js# Video upload/retrieval logic
-│ └── userController.js # User profile management logic
+│ ├── authController.js
+│ ├── videoController.js
+│ └── userController.js
 ├── /models
-│ ├── User.js          # User data model
-│ ├── Video.js         # Video data model
-│ └── Comment.js       # Comment data model (optional)
+│ ├── User.js
+│ ├── Video.js
+│ └── Comment.js
 ├── /routes
-│ ├── authRoutes.js    # Authentication routes
-│ ├── videoRoutes.js   # Video-related routes
-│ └── userRoutes.js    # User-related routes
+│ ├── authRoutes.js
+│ ├── videoRoutes.js
+│ └── userRoutes.js
 ├── /middleware
-│ ├── authMiddleware.js # Authentication middleware
-│ └── uploadMiddleware.js# File upload middleware
+│ ├── auth.js
+│ └── upload.js
 ├── /utils
-│ └── uploadUtils.js   # Utility functions for video uploads
-├── /public           # Publicly accessible files
-│ └── /uploads        # Uploaded videos and thumbnails
-├── server.js         # Main server file
-├── .env              # Environment variables (database credentials, etc.)
-└── package.json       # Project dependencies and scripts
+│ └── helpers.js
+├── server.js
+└── package.json
 ```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Inspired by YouTube's design and functionality
+- Built with modern web technologies
+- Focused on performance and user experience
